@@ -19,4 +19,4 @@ before_script:
 
 script: bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
-after_script: php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+after_script: if [[ "$TRAVIS_PHP_VERSION" == "5.4" ]]; then php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi
