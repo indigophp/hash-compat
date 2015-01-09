@@ -4,7 +4,6 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Build Status](https://img.shields.io/travis/indigophp/hash/develop.svg?style=flat-square)](https://travis-ci.org/indigophp/hash)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/indigophp/hash.svg?style=flat-square)](https://scrutinizer-ci.com/g/indigophp/hash)
-[![Quality Score](https://img.shields.io/scrutinizer/g/indigophp/hash.svg?style=flat-square)](https://scrutinizer-ci.com/g/indigophp/hash)
 [![HHVM Status](https://img.shields.io/hhvm/indigophp/hash.svg?style=flat-square)](http://hhvm.h4cc.de/package/indigophp/hash)
 [![Total Downloads](https://img.shields.io/packagist/dt/indigophp/hash.svg?style=flat-square)](https://packagist.org/packages/indigophp/hash)
 
