@@ -3,7 +3,7 @@
 class HashEqualsTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @expectedException PHPUnit_Framework_Error_Warning
+     * @expectedException        PHPUnit_Framework_Error_Warning
      * @expectedExceptionMessage hash_equals() expects exactly 2 parameters, 0 given
      */
     public function testWithZeroArgs()
@@ -19,7 +19,7 @@ class HashEqualsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException PHPUnit_Framework_Error_Warning
+     * @expectedException        PHPUnit_Framework_Error_Warning
      * @expectedExceptionMessage hash_equals() expects exactly 2 parameters, 1 given
      */
     public function testWithOneArg()
@@ -35,7 +35,7 @@ class HashEqualsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException PHPUnit_Framework_Error_Warning
+     * @expectedException        PHPUnit_Framework_Error_Warning
      * @expectedExceptionMessage hash_equals(): Expected known_string to be a string, null given
      */
     public function testWithInvalidKnownString()
@@ -51,7 +51,7 @@ class HashEqualsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException PHPUnit_Framework_Error_Warning
+     * @expectedException        PHPUnit_Framework_Error_Warning
      * @expectedExceptionMessage hash_equals(): Expected user_string to be a string, null given
      */
     public function testWithInvalidUserString()
