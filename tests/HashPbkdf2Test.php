@@ -76,8 +76,8 @@ class HashPbkdf2Test extends \PHPUnit_Framework_TestCase
                 'e4afb928afabe71381223ec1218a53eb4d86b430',
             ),
             array(
-                array('ripemd256', '54af601d1ec43', '54af601d1ec78', 1, 0, false),
-                '4a9bf2c3df878cbfd9c5d925975c6c5c87923af81f3f63df458bf6b0c216ee36',
+                array('ripemd256', '54af601d1ec43', '54af601d1ec78', 3, 0, false),
+                '75e1cbb6e7db9b5e01f4171083897c5c1ecb9896b3af93372b8a32a9f3621add',
             ),
             array(
                 array('haval224,5', '54af601d1ecb2', '54af601d1ece7', 1, 5, false),
