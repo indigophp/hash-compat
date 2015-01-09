@@ -29,7 +29,7 @@ if (!function_exists('hash_equals')) {
 
         // Check the number of arguments
         if ($argc < 2) {
-            trigger_error(sprintf('hash_equals() expects at least 2 parameters, %d given', $argc), E_USER_WARNING);
+            trigger_error(sprintf('hash_equals() expects exactly 2 parameters, %d given', $argc), E_USER_WARNING);
 
             return null;
         }
@@ -37,7 +37,7 @@ if (!function_exists('hash_equals')) {
         // Check $known_string type
         if (!is_string($known_string))
         {
-            trigger_error(sprintf('hash_equals(): Expected known_string to be a string, %s given', gettype($known_string)), E_USER_WARNING);
+            trigger_error(sprintf('hash_equals(): Expected known_string to be a string, %s given', strtolower(gettype($known_string))), E_USER_WARNING);
 
             return false;
         }
@@ -45,7 +45,7 @@ if (!function_exists('hash_equals')) {
         // Check $user_string type
         if (!is_string($user_string))
         {
-            trigger_error(sprintf('hash_equals(): Expected user_string to be a string, %s given', gettype($user_string)), E_USER_WARNING);
+            trigger_error(sprintf('hash_equals(): Expected user_string to be a string, %s given', strtolower(gettype($user_string))), E_USER_WARNING);
 
             return false;
         }
