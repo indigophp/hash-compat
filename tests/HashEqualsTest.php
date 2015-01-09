@@ -6,12 +6,12 @@ class HashEqualsTest extends \PHPUnit_Framework_TestCase
      * @expectedException        PHPUnit_Framework_Error_Warning
      * @expectedExceptionMessage hash_equals() expects exactly 2 parameters, 0 given
      */
-    public function testWithZeroArgs()
+    public function testZeroArgs()
     {
         hash_equals();
     }
 
-    public function testWithZeroArgsReturnValue()
+    public function testZeroArgsReturnValue()
     {
         $actual = @hash_equals();
 
@@ -22,12 +22,12 @@ class HashEqualsTest extends \PHPUnit_Framework_TestCase
      * @expectedException        PHPUnit_Framework_Error_Warning
      * @expectedExceptionMessage hash_equals() expects exactly 2 parameters, 1 given
      */
-    public function testWithOneArg()
+    public function testOneArg()
     {
         hash_equals('');
     }
 
-    public function testWithOneArgReturnValue()
+    public function testOneArgReturnValue()
     {
         $actual = @hash_equals('');
 
@@ -38,12 +38,12 @@ class HashEqualsTest extends \PHPUnit_Framework_TestCase
      * @expectedException        PHPUnit_Framework_Error_Warning
      * @expectedExceptionMessage hash_equals(): Expected known_string to be a string, null given
      */
-    public function testWithInvalidKnownString()
+    public function testInvalidKnownString()
     {
         hash_equals(null, '');
     }
 
-    public function testWithInvalidKnownStringReturnValue()
+    public function testInvalidKnownStringReturnValue()
     {
         $actual = @hash_equals(null, '');
 
@@ -54,12 +54,12 @@ class HashEqualsTest extends \PHPUnit_Framework_TestCase
      * @expectedException        PHPUnit_Framework_Error_Warning
      * @expectedExceptionMessage hash_equals(): Expected user_string to be a string, null given
      */
-    public function testWithInvalidUserString()
+    public function testInvalidUserString()
     {
         hash_equals('', null);
     }
 
-    public function testWithInvalidUserStringReturnValue()
+    public function testInvalidUserStringReturnValue()
     {
         $actual = @hash_equals('', null);
 
