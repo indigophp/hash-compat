@@ -1,5 +1,5 @@
 {
-    "name": "indigophp/hash",
+    "name": "indigophp/hash-compat",
     "description": "Backports hash_* functionality to older PHP versions",
     "license": "MIT",
     "keywords": ["hash", "hash_equals", "hash_pbkdf2"],
