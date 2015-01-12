@@ -2,7 +2,7 @@
 
 [![Latest Version](https://img.shields.io/github/release/indigophp/hash-compat.svg?style=flat-square)](https://github.com/indigophp/hash-compat/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://img.shields.io/travis/indigophp/hash-compat/develop.svg?style=flat-square)](https://travis-ci.org/indigophp/hash-compat)
+[![Build Status](https://img.shields.io/travis/indigophp/hash-compat.svg?style=flat-square)](https://travis-ci.org/indigophp/hash-compat)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/indigophp/hash-compat.svg?style=flat-square)](https://scrutinizer-ci.com/g/indigophp/hash-compat)
 [![HHVM Status](https://img.shields.io/hhvm/indigophp/hash-compat.svg?style=flat-square)](http://hhvm.h4cc.de/package/indigophp/hash-compat)
 [![Total Downloads](https://img.shields.io/packagist/dt/indigophp/hash-compat.svg?style=flat-square)](https://packagist.org/packages/indigophp/hash-compat)

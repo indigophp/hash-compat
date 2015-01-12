@@ -27,9 +27,6 @@
             "dev-develop": "1.1-dev"
         }
     },
-    "config": {
-        "bin-dir": "bin"
-    },
     "prefer-stable": true,
     "minimum-stability": "dev"
 }

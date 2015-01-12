@@ -16,8 +16,8 @@ before_script:
   - travis_retry composer self-update
   - travis_retry composer install --prefer-source --no-interaction
 
-script: bin/phpunit --coverage-text --coverage-clover=coverage.clover
+script: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
 after_script:
-  - bash -c 'if [ "$TRAVIS_PHP_VERSION" == "5.4" ]; then wget https://scrutinizer-ci.com/ocular.phar; fi;'
-  - bash -c 'if [ "$TRAVIS_PHP_VERSION" == "5.4" ]; then php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi'
+  - if [[ "$TRAVIS_PHP_VERSION" == "5.4" ]]; then wget https://scrutinizer-ci.com/ocular.phar; fi
+  - if [[ "$TRAVIS_PHP_VERSION" == "5.4" ]]; then php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi
