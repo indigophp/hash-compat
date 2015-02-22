@@ -2,6 +2,13 @@
 
 class HashPbkdf2Test extends \PHPUnit_Framework_TestCase
 {
+    public function setUp()
+    {
+        if (defined('HHVM_VERSION')) {
+            $this->markTestSkipped('HHVM already has hash_pbkdf2 function');
+        }
+    }
+
     /**
      * @expectedException        PHPUnit_Framework_Error_Warning
      * @expectedExceptionMessage hash_pbkdf2() expects at least 4 parameters, 0 given
