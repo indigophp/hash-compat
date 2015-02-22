@@ -40,6 +40,13 @@ class HashEqualsTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidKnownString()
     {
+        if (defined('HHVM_VERSION')) {
+            $this->setExpectedException(
+                'PHPUnit_Framework_Error_Warning',
+                'hash_equals(): Expected known_string to be a string, NULL given'
+            );
+        }
+
         hash_equals(null, '');
     }
 
@@ -56,6 +63,13 @@ class HashEqualsTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidUserString()
     {
+        if (defined('HHVM_VERSION')) {
+            $this->setExpectedException(
+                'PHPUnit_Framework_Error_Warning',
+                'hash_equals(): Expected user_string to be a string, NULL given'
+            );
+        }
+
         hash_equals('', null);
     }
 
