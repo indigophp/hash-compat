@@ -38,12 +38,20 @@ if (!function_exists('hash_pbkdf2')) {
             return null;
         }
 
+        // Check if a variable is acceptable as a string
+        $notStringCastable = function($var) {
+            return !is_scalar($var) && !is_null($var) && !(is_object($var) && method_exists($var, '__toString'));
+        };
+
+        // Check if a variable is acceptable as an integer
+        $notIntegerCastable = function($var) {
+            return !is_numeric($var) && !is_null($var) && !is_bool($var);
+        };
+
+
         // Check $algo type
         // Any values that can be casted to string is valid
-        if (!is_scalar($algo)
-            and !is_null($algo)
-            and !(is_object($algo) and method_exists($algo, '__toString'))
-        ) {
+        if ($notStringCastable($algo)) {
             trigger_error(sprintf('hash_pbkdf2() expects parameter 1 to be string, %s given', gettype($algo)), E_USER_WARNING);
 
             return null;
@@ -51,10 +59,7 @@ if (!function_exists('hash_pbkdf2')) {
 
         // Check $password type
         // Any values that can be casted to string is valid
-        if (!is_scalar($password)
-            and !is_null($password)
-            and !(is_object($password) and method_exists($password, '__toString'))
-        ) {
+        if ($notStringCastable($password)) {
             trigger_error(sprintf('hash_pbkdf2() expects parameter 2 to be string, %s given', gettype($password)), E_USER_WARNING);
 
             return null;
@@ -62,10 +67,7 @@ if (!function_exists('hash_pbkdf2')) {
 
         // Check $salt type
         // Any values that can be casted to string is valid
-        if (!is_scalar($salt)
-            and !is_null($salt)
-            and !(is_object($salt) and method_exists($salt, '__toString'))
-        ) {
+        if ($notStringCastable($salt)) {
             trigger_error(sprintf('hash_pbkdf2() expects parameter 3 to be string, %s given', gettype($salt)), E_USER_WARNING);
 
             return null;
@@ -73,7 +75,7 @@ if (!function_exists('hash_pbkdf2')) {
 
         // Check $iterations type
         // Any values that can be casted to integer is valid (null is evaluated to 0)
-        if (!is_numeric($iterations) and !is_null($iterations) and !is_bool($iterations)) {
+        if ($notIntegerCastable($iterations)) {
             trigger_error(sprintf('hash_pbkdf2() expects parameter 4 to be long, %s given', gettype($iterations)), E_USER_WARNING);
 
             return null;
@@ -81,14 +83,14 @@ if (!function_exists('hash_pbkdf2')) {
 
         // Check $length type
         // Any values that can be casted to integer is valid (null is evaluated to 0)
-        if (!is_numeric($length) and !is_null($length) and !is_bool($length)) {
+        if ($notIntegerCastable($length)) {
             trigger_error(sprintf('hash_pbkdf2() expects parameter 5 to be long, %s given', gettype($length)), E_USER_WARNING);
 
             return null;
         }
 
         // Check $raw_output type
-        // Any values that can be casted to boolean is valid
+        // Any values that can be casted to boolean is valid (null is evaluated to false)
         if (!is_scalar($raw_output) and !is_null($raw_output)) {
             trigger_error(sprintf('hash_pbkdf2() expects parameter 6 to be boolean, %s given', gettype($raw_output)), E_USER_WARNING);
 
