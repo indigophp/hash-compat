@@ -44,6 +44,11 @@ $ phpunit
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 
+## Security
+
+If you discover any security related issues, please contact us at [security@indigophp.com](mailto:security@indigophp.com).
+
+
 ## Credits
 
 - [Márk Sági-Kazár](https://github.com/sagikazarmark)
