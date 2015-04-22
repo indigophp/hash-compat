@@ -10,6 +10,7 @@
  */
 
 if (!function_exists('hash_pbkdf2')) {
+    defined('USE_MB_STRING') or define('USE_MB_STRING', function_exists('mb_strlen'));
 
     /**
      * hash_pbkdf2 — Generate a PBKDF2 key derivation of a supplied password
@@ -104,9 +105,18 @@ if (!function_exists('hash_pbkdf2')) {
             return false;
         }
 
+        // Ensures raw binary string length returned
+        $strlen = function($string) {
+            if (USE_MB_STRING) {
+                return mb_strlen($string, '8bit');
+            }
+
+            return strlen($string);
+        };
+
         // Check salt length
         // @codeCoverageIgnoreStart
-        if ($salt_len = strlen($salt) > PHP_INT_MAX - 4) {
+        if ($salt_len = $strlen($salt) > PHP_INT_MAX - 4) {
             trigger_error(sprintf('hash_pbkdf2(): Supplied salt is too long, max of PHP_INT_MAX - 4 bytes: %d supplied', $salt_len), E_USER_WARNING);
 
             return false;
@@ -135,7 +145,7 @@ if (!function_exists('hash_pbkdf2')) {
         $length = (int) $length;
         $raw_output = (bool) $raw_output;
 
-        $hash_length = strlen(hash($algo, null, true));
+        $hash_length = $strlen(hash($algo, null, true));
 
         if ($length == 0) {
             $length = $raw_output ? $hash_length : $hash_length * 2;

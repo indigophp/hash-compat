@@ -1,6 +1,13 @@
 # Change Log
 
 
+## Unreleased
+
+### Fixed
+
+- Raw binary string length (#3)
+
+
 ## 1.0.1 - 2015-02-22
 
 ### Fixed
