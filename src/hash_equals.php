@@ -10,6 +10,24 @@
  */
 
 if (!function_exists('hash_equals')) {
+    
+    /**
+     * A strlen() implementation that won't get killed by mbstring.func_overload
+     * 
+     * @param @string $str
+     * @return int
+     */
+    function hash_compat_strlen($str)
+    {
+        static $exists = null;
+        if ($exists === null) {
+            $exists = function_exists('mb_strlen');
+        }
+        if ($exists) {
+            return mb_strlen($str, '8bit');
+        }
+        return strlen($str);
+    }
 
     /**
      * hash_equals — Timing attack safe string comparison
@@ -49,7 +67,7 @@ if (!function_exists('hash_equals')) {
         }
 
         // Compare string lengths
-        if (($length = strlen($known_string)) !== strlen($user_string)) {
+        if (($length = hash_compat_strlen($known_string)) !== hash_compat_strlen($user_string)) {
             return false;
         }
 
