@@ -12,8 +12,8 @@ matrix:
     - php: 5.3
       env:
         - COMPOSER_FLAGS="--prefer-stable --prefer-lowest"
-        - PHPUNIT_FLAGS="-c phpunit.xml.ci"
         - COVERAGE=true
+        - PHPUNIT_FLAGS="-c phpunit.xml.ci"
 
 install:
   - travis_retry composer self-update
