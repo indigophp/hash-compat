@@ -1,11 +1,11 @@
 # Change Log
 
 
-## Unreleased
+## 1.1.0 - 2015-08-22
 
 ### Fixed
 
-- Raw binary string length (#3)
+- Raw binary string length ([#3](https://github.com/indigophp/hash-compat/pull/3))
 
 
 ## 1.0.1 - 2015-02-22
