@@ -34,7 +34,7 @@ Currently supported functions:
 ## Testing
 
 ``` bash
-$ phpunit
+$ composer test
 ```
 
 
