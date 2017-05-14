@@ -1,8 +1,6 @@
 <?php
 
 if (!function_exists('hash_equals')) {
-    defined('USE_MB_STRING') or define('USE_MB_STRING', function_exists('mb_strlen'));
-
     /**
      * hash_equals — Timing attack safe string comparison
      *
@@ -40,17 +38,8 @@ if (!function_exists('hash_equals')) {
             return false;
         }
 
-        // Ensures raw binary string length returned
-        $strlen = function($string) {
-            if (USE_MB_STRING) {
-                return mb_strlen($string, '8bit');
-            }
-
-            return strlen($string);
-        };
-
         // Compare string lengths
-        if (($length = $strlen($known_string)) !== $strlen($user_string)) {
+        if (($length = strlen($known_string)) !== strlen($user_string)) {
             return false;
         }
 
